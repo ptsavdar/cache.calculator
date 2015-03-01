@@ -449,7 +449,15 @@ div.address-repartition div:last-child {
 }
 
 div.buttons-row, div.input-row{margin-top: 10px;}
-
+input[type="email"]:disabled,
+input[type="number"]:disabled,
+input[type="search"]:disabled,
+input[type="text"]:disabled,
+input[type="tel"]:disabled,
+input[type="url"]:disabled,
+input[type="password"]:disabled,
+textarea:disabled,
+select:disabled{background: #eee; cursor: not-allowed}
 /* #Media Queries
 ================================================== */
 

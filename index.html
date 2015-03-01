@@ -37,17 +37,16 @@
             <h5>Cache organization</h5>
             <form id="cacheOrganizationForm" name="cacheOrganization" data-ng-submit="cc.submitForm()">
               <div class="row input-row">
-                <div class="six columns">
+                <div class="five columns cache-size-input">
                     <label for="blockSize">Cache size </label>
-                    <input id="blockSize" type="number" data-ng-model="cc.cache.cacheSize">
-                    <select data-ng-options="unit.name for unit in cc.cache.possibleSizeUnits" data-ng-model="cc.cache.cacheSizeUnit">
-                    </select>
-                    <strong>OR</strong>                        
+                    <input id="blockSize" type="number" data-ng-disabled="cc.cache.blocks" data-ng-model="cc.cache.cacheSize">
+                    <select data-ng-options="unit.name for unit in cc.cache.possibleSizeUnits" data-ng-disabled="cc.cache.blocks" data-ng-model="cc.cache.cacheSizeUnit">
+                    </select>                        
                 </div>
-                <div class="six columns">
-
+                <div class="two columns"><br/><strong>OR</strong></div>
+                <div class="five columns blocks-input">
                     <label for="blocks">Number of Blocks/Sets</label>
-                    <input name="blocks" data-ng-model="cc.cache.blocks" type="number" id="blocks">
+                    <input name="blocks" data-ng-model="cc.cache.blocks" data-ng-disabled="cc.cache.cacheSize" type="number" id="blocks">
                 </div>
               </div>
               <div class="row text-error" data-ng-if="cc.result.errors.addresssize">{{cc.result.errors.cachesize}}</div>
